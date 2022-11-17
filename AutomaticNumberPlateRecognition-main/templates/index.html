@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index_style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    </head>
+    <body>
+
+        <div class="content">
+            <div class="text">Upload File</div>
+          <div class="file-input">
+              <form method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/png, image/jpg, image/jpeg" required/>
+                <input type="submit">
+              </form>
+          </div>
+            {% if data %}
+            <p>{{ data['output'] }}</p>
+            {% endif %}
+
+        </div>
+        <div class="image">
+            {% if data %}
+            <img src="{{ data['image'] }}" alt="">
+            {% endif %}
+
+        </div>
+
+
+    </body>
+</html>
